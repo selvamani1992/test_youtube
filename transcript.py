@@ -1,5 +1,6 @@
 from urllib.parse import urlparse, parse_qs
 from youtube_transcript_api import YouTubeTranscriptApi, TranscriptsDisabled, NoTranscriptFound
+from youtube_transcript_api.proxies import WebshareProxyConfig
 import re
 import os
 
@@ -69,7 +70,7 @@ def clean_transcript(text: str) -> str:
 
 def get_youtube_transcript(video_id):
     try:
-        ytt_api = YouTubeTranscriptApi()
+        ytt_api = YouTubeTranscriptApi(proxy_config=WebshareProxyConfig(proxy_username="gxilvhgw",proxy_password="ql820ki851qn"))
         fetched_transcript = ytt_api.fetch(video_id)
         full_text = ""
 
