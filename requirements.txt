@@ -1,0 +1,12 @@
+ipykernel
+langchain
+langchain_community
+langchain-text-splitters
+langchain-google-genai
+faiss-cpu
+youtube-transcript-api
+python-dotenv
+streamlit
+streamlit-chat
+streamlit-option-menu
+google-generativeai
