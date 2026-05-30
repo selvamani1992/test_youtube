@@ -8,7 +8,9 @@ from transcript import extract_video_id, get_youtube_transcript
 import os
 from dotenv import load_dotenv
 load_dotenv()
+import streamlit as st
 
+api_key = st.secrets["Gemini_API_Key_3"]
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -17,12 +19,12 @@ warnings.filterwarnings("ignore")
 
 embeddings = GoogleGenerativeAIEmbeddings(
     model="gemini-embedding-001",
-    google_api_key=os.getenv('Gemini_API_Key_3')
+    google_api_key=api_key
 )
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-2.5-flash",
-    google_api_key=os.getenv('Gemini_API_Key_3'),
+    google_api_key=api_key,
     temperature=0
 )
 
